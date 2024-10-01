@@ -8,14 +8,21 @@ dictionaryRouter.get('/', (req, res) => {
     return res.status(200).json({ dictionary });
 });
 
-dictionaryRouter.get('/', (req, res) => {
-    return res.status(501).send('(POST) DICTIONARY: not implemented' );
+dictionaryRouter.post('/', (req, res) => {
+    console.log(req.body);
+
+    dictionary.push(req.body.word);
+
+    return res.status(201).json({
+        status: 'success',
+        msg: 'Naujas zodis priimtas sekmingai'
+    });
 });
 
-dictionaryRouter.get('/', (req, res) => {
-    return res.status(501).send('(PUT) DICTIONARY: not implemented' );
+dictionaryRouter.put('/', (req, res) => {
+    return res.status(501).send('(PUT) DICTIONARY: Not implemented');
 });
 
-dictionaryRouter.get('/', (req, res) => {
-    return res.status(501).send('(DELETE) DICTIONARY: not implemented' );
+dictionaryRouter.delete('/', (req, res) => {
+    return res.status(501).send('(DELETE) DICTIONARY: Not implemented');
 });
