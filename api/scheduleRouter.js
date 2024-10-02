@@ -43,7 +43,7 @@ scheduleRouter.post('/', (req, res) => {
     if (!Array.isArray(schedule) || schedule.length !== 7) {
         return res.status(400).json({
             status: 'error',
-            msg: 'Tvarkaraštis yra savaitės, t.y 7 dienos.'
+            msg: 'Tvarkaraštis yra savaitės, t.y 7 dienos turi būti masyvas.'
         });
     }
 
